@@ -11,6 +11,11 @@
   --text-color-accent: white;
   --text-color-content: black;
   --bg-color: #E2E8F0;
+  --accent-secondary: #F0B429;
+}
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 /* --- Parent Container --- */
@@ -30,7 +35,7 @@
   grid-template-columns: 1fr auto;
   grid-auto-flow: column;
   justify-content: space-between;
-  padding: 10px;
+  padding: 10px 5vw 10px 1vw;
 }
 
 .searchContainer {
@@ -47,6 +52,9 @@
   width: clamp(200px, 75%, 750px);
   background-color: var(--bg-color);
   border-radius: 10px;
+  border: 0;
+  resize: none;
+  padding: 5px 10px;
 }
 
 .userContainer {
@@ -57,10 +65,9 @@
 }
 
 .optionsProfile {
-  background-color: yellow;
+  background-color: var(--accent-secondary);
   height: 35px;
   width: 35px;
-  border: 1px solid black;
   border-radius: 100%;
 }
 
@@ -69,12 +76,52 @@
   font-weight: bolder;
 }
 
+/* --- Greeting and project buttons banner --- */
 
 .userHeader {
   min-height: 25px;
-  border: 1px dashed red;
   grid-area: 2 / 2 / 3 / -1;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
+
+.projectOptions {
+  justify-self: end;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 30px;
+
+  padding: 10px 4vw 10px;
+  align-items: center;
+}
+
+button {
+  background: var(--accent-color);
+  padding: 10px 30px;
+  color: var(--text-color-accent);
+  max-height: 3em;
+  border-radius: 25px;
+  border: 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.userGreeting {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 2vw;
+}
+
+.profileGreet {
+  width: 75px;
+  height: 75px;
+  background-color: var(--accent-secondary);
+  border-radius: 50px;
+}
+
 
 /* --- Sidebar Navigation */
 
@@ -120,5 +167,140 @@ ul a {
   min-height: 25px;
   background: var(--bg-color);
   grid-area: 3 / 2 / 3 / 4;
+
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  grid-template-columns: 1fr auto;
+}
+
+.projectList {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  justify-items: center;
+}
+
+.card {
+  width: 350px;
+  height: 200px;
+  background-color: var(--text-color-accent);
+  padding: 25px 30px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+}
+
+.card::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 200px;
+  background-color: var(--accent-secondary);
+}
+
+.card p {
+  color: grey;
+
+}
+
+.projectTitle {
+  font-weight: bold;
+}
+
+h3 {
+  padding: 10px 0;
+}
+
+.projectBtns {
+  align-self: end;
+  justify-self: end;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 20px;
+}
+
+.projectBtns > * {
+  cursor: pointer;
+}
+/* --- Announcements and Trending */
+
+.ad {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+.announceBox {
+  width: 300px;
+  border-radius: 10px;
+  background-color: var(--text-color-accent);
+  padding: 20px;
+}
+
+.announceBox p {
+  color: grey;
+  padding-bottom: 15px;
+}
+
+h4 {
+  margin-top: 15px;
+}
+
+hr {
+  height: 2px;
+  background-color: lightgrey;
+  border: none;
+}
+
+.trendingBox {
+  width: 300px;
+  border-radius: 10px;
+  background-color: var(--text-color-accent);
+  padding: 20px;
+  display: grid;
+  grid-auto-rows: repeat(auto-fitt, minmax(50px, 1fr));
+}
+
+.userCard {
+  height: 75px;
+  display: grid;
+  grid-template-rows: 1fr;
+  padding: 10px;
+  align-items: center;
+  grid-auto-flow: column;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+}
+
+.trendPic {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.userCard:nth-of-type(1) .trendPic{
+  background-color: lightblue;
+}
+
+.userCard:nth-of-type(2) .trendPic{
+  background-color: var(--accent-secondary);
+}
+
+.userCard:nth-of-type(3) .trendPic{
+  background-color: grey;
+}
+
+.userCard:nth-of-type(4) .trendPic{
+  background-color: pink;
+}
+
+.trendTagline {
+  font-size: 14px;
+  color: grey;
 }
 
