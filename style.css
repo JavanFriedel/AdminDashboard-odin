@@ -18,6 +18,10 @@ body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+img {
+  max-width: 100%;
+}
+
 /* --- Parent Container --- */
 .container {
   display: grid;
@@ -113,13 +117,22 @@ button {
   align-items: center;
   gap: 20px;
   padding: 10px 2vw;
+  font-weight: bold;
 }
 
 .profileGreet {
   width: 75px;
   height: 75px;
-  background-color: var(--accent-secondary);
   border-radius: 50px;
+}
+
+.userGreet {
+  font-size: large;
+}
+
+.userGreet > p {
+  font-size: 12px;
+  padding: 5px 0;
 }
 
 
@@ -239,7 +252,7 @@ h3 {
   width: 300px;
   border-radius: 10px;
   background-color: var(--text-color-accent);
-  padding: 20px;
+  padding: 20px 30px;
 }
 
 .announceBox p {
